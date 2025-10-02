@@ -349,7 +349,7 @@ const Game = () => {
   return (
     <div className="no-scroll min-h-dvh h-dvh flex flex-col page-container pt-2 relative">
       {/* Header */}
-      <div className="flex items-center justify-between mb-4 sm:mb-6">
+      <div className="flex items-center justify-between mb-4 sm:mb-6 px-2">
         <Button
           onClick={handleExitGame}
           variant="ghost"
