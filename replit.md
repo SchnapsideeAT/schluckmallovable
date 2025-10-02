@@ -1,7 +1,7 @@
 # Schluck Mal - Game Application
 
 ## Overview
-This is a React-based card game application called "Schluck Mal" (German drinking game). It's a frontend-only single-page application built with Vite, React, TypeScript, and shadcn/ui components.
+This is a React-based card game application called "Schluck Mal" (German drinking game). It's a frontend-only single-page application built with Vite, React, TypeScript, and shadcn/ui components, hosted on Lovable.
 
 ## Project Architecture
 - **Framework**: React 18 with TypeScript
@@ -23,13 +23,14 @@ This is a React-based card game application called "Schluck Mal" (German drinkin
 - Zod for validation
 
 ## Development Setup
-- Port: 5000 (configured for Replit)
-- Host: 0.0.0.0 (allows Replit proxy)
+- Port: 8080 (configured for Lovable)
+- Host: 0.0.0.0
 - Dev command: `npm run dev`
 - Build command: `npm run build`
 
 ## Deployment
-- Type: Autoscale (static site)
+- Deployed on Lovable
+- Type: Static site
 - Build: `npm run build`
 - No backend server required
 
@@ -60,10 +61,13 @@ This is a React-based card game application called "Schluck Mal" (German drinkin
 - Installed and configured `@capacitor/status-bar` plugin with overlay mode
 - Created `src/utils/capacitor-init.ts` for Status Bar initialization
 
+### Oct 2, 2025 - Lovable Migration
+- Migrated from Replit to Lovable
+- Updated Vite config to use port 8080
+- Removed Replit-specific configurations
+- Updated documentation for Lovable deployment
+
 ### Oct 1, 2025
 - Imported from GitHub
-- Configured for Replit environment
-- Updated Vite config to use port 5000 and allow Replit hosts
-- Set up deployment configuration
-- Configured workflow for development server
+- Initial setup and configuration
 - Removed old dialog-based tutorial, kept only Interactive Tutorial with swipe gestures
