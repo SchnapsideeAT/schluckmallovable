@@ -297,10 +297,10 @@ All colors MUST be HSL.
 
 @keyframes glowPulse {
   0%, 100% {
-    opacity: 0.2;
+    opacity: 0.3;
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
