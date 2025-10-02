@@ -223,7 +223,7 @@ export const InteractiveTutorial = () => {
 
         {/* Tutorial card for left/right swipe steps - EXACT GameCard structure */}
         {step.requiredSwipe && (
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center gap-4 sm:gap-6">
             {/* Card */}
             <div className="w-full flex items-center justify-center">
             <div 
