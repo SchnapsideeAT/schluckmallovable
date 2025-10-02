@@ -122,7 +122,7 @@ export const GameCard = memo(({
         alt={`${card.category} Card ${card.id}`}
         className="w-full h-auto object-contain rounded-2xl block pointer-events-auto"
         style={{
-          boxShadow: `0 0 15px hsl(${categoryColor} / 0.3), 0 0 30px hsl(${categoryColor} / 0.15)`,
+          boxShadow: `0 0 10px hsl(${categoryColor} / 0.2), 0 0 20px hsl(${categoryColor} / 0.1)`,
           cursor: horizontalDistance !== 0 ? 'grabbing' : 'grab',
         }}
         draggable={false}
