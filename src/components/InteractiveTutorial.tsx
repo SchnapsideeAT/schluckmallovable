@@ -243,7 +243,7 @@ export const InteractiveTutorial = () => {
                 <img 
                   src={cardBackSvg} 
                   alt="Tutorial Card" 
-                  className="w-full h-full object-contain rounded-2xl"
+                  className="w-full h-auto object-contain rounded-2xl block"
                   draggable={false}
                 />
                 
