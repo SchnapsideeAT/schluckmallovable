@@ -261,7 +261,7 @@ export const InteractiveTutorial = () => {
             </div>
 
             {/* Direction icon hint below card with text */}
-            <div className={`flex flex-col items-center gap-4 ${canProceed ? 'opacity-0' : 'opacity-100'} transition-opacity`}>
+            <div className={`flex flex-col items-center gap-4 -mt-12 ${canProceed ? 'opacity-0' : 'opacity-100'} transition-opacity`}>
               {step.requiredSwipe === 'right' && (
                 <>
                   <ArrowRight className="w-16 h-16 sm:w-20 sm:h-20 text-green-500 animate-bounce-right" />
