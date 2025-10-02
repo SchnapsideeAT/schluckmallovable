@@ -7,15 +7,8 @@ interface WindowSize {
 
 export const useWindowSize = () => {
   const getSize = () => {
-    // Use visualViewport API for better iOS support
-    // Falls back to window.innerWidth/Height if not available
-    if (window.visualViewport) {
-      return {
-        width: window.visualViewport.width,
-        height: window.visualViewport.height,
-      };
-    }
-    
+    // Use window dimensions directly for accurate viewport size
+    // This gives the full screen size before safe area insets are applied
     return {
       width: window.innerWidth,
       height: window.innerHeight,
