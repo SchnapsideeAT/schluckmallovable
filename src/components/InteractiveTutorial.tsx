@@ -226,26 +226,28 @@ export const InteractiveTutorial = () => {
           <div className="w-full flex flex-col items-center gap-4 sm:gap-6">
             {/* Card */}
             <div className="w-full flex items-center justify-center">
-              <div 
-                className="relative inline-block touch-none select-none"
+            <div 
+              className="relative inline-block pointer-events-none select-none"
+              style={{
+                width: `${cardMaxWidth}px`,
+                height: `${cardMaxHeight}px`,
+                maxHeight: `${cardMaxHeight}px`,
+                maxWidth: `${cardMaxWidth}px`,
+                transform: `translateX(${swipeState.horizontalDistance}px) rotate(${swipeState.horizontalDistance * 0.1}deg)`,
+                transition: swipeState.isSwiping ? 'none' : 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                backfaceVisibility: 'hidden',
+              }}
+            >
+              <img 
+                src={cardBackSvg} 
+                alt="Tutorial Card" 
+                className="w-full h-auto object-contain rounded-2xl block pointer-events-auto"
                 style={{
-                  width: `${cardMaxWidth}px`,
-                  height: `${cardMaxHeight}px`,
-                  maxHeight: `${cardMaxHeight}px`,
-                  maxWidth: `${cardMaxWidth}px`,
-                  transform: `translateX(${swipeState.horizontalDistance}px) rotate(${swipeState.horizontalDistance * 0.1}deg)`,
-                  transition: swipeState.isSwiping ? 'none' : 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                   cursor: swipeState.isSwiping ? 'grabbing' : 'grab',
-                  backfaceVisibility: 'hidden',
                 }}
+                draggable={false}
                 {...swipeHandlers}
-              >
-                <img 
-                  src={cardBackSvg} 
-                  alt="Tutorial Card" 
-                  className="w-full h-auto object-contain rounded-2xl block"
-                  draggable={false}
-                />
+              />
                 
                 {/* Success checkmark */}
                 {canProceed && (
