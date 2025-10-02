@@ -355,7 +355,7 @@ const Game = () => {
           variant="ghost"
           className="group hover:bg-transparent h-10 w-10 p-0 transition-transform active:scale-95"
         >
-          <Home className="!w-5 !h-5 group-hover:text-primary transition-colors" />
+          <Home className="!w-6 !h-6 group-hover:text-primary transition-colors" />
         </Button>
         
         <Button
@@ -367,7 +367,7 @@ const Game = () => {
           variant="ghost"
           className="group hover:bg-transparent h-10 w-10 p-0 transition-transform active:scale-95"
         >
-          <Settings className="!w-5 !h-5 group-hover:text-primary transition-colors" />
+          <Settings className="!w-6 !h-6 group-hover:text-primary transition-colors" />
         </Button>
       </div>
 
