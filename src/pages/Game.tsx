@@ -372,7 +372,7 @@ const Game = () => {
       </div>
 
       {/* Card display area */}
-      <div className="flex-1 flex items-start justify-center pt-12 pb-8 sm:pt-16 sm:pb-10 md:pt-20 md:pb-12 pointer-events-none">
+      <div className="flex-1 flex items-start justify-center pt-16 pb-8 sm:pt-20 sm:pb-10 md:pt-24 md:pb-12 pointer-events-none">
         {currentIndex === -1 ? (
           <div 
             className="text-center space-y-6 slide-up cursor-pointer pointer-events-auto"
