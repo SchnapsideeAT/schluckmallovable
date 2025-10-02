@@ -57,25 +57,25 @@ export const InteractiveTutorial = () => {
   const step = tutorialSteps[currentStep];
   const isLastStep = currentStep === tutorialSteps.length - 1;
   
-  // Responsive card sizing - EXACT COPY from GameCard
+  // Responsive card sizing optimized for iOS
   let cardMaxHeight: number;
   let cardMaxWidth: number;
   
   if (width < 375) {
-    // Compact phones (iPhone SE, small Android)
-    cardMaxHeight = height * 0.58;
+    // Compact phones (iPhone SE, small Android) - reduced for iOS safe areas
+    cardMaxHeight = height * 0.50;
     cardMaxWidth = width * 0.75;
   } else if (width < 430) {
     // Standard phones (iPhone 13/14/15, Galaxy S23/24, Pixel 7/8)
-    cardMaxHeight = height * 0.60;
+    cardMaxHeight = height * 0.52;
     cardMaxWidth = width * 0.78;
   } else if (width < 768) {
     // Large phones & phablets (iPhone Pro Max, Galaxy Ultra, Pixel Pro)
-    cardMaxHeight = height * 0.62;
+    cardMaxHeight = height * 0.54;
     cardMaxWidth = width * 0.80;
   } else {
     // Tablets & Desktop
-    cardMaxHeight = height * 0.65;
+    cardMaxHeight = height * 0.60;
     cardMaxWidth = Math.min(width * 0.50, 400); // Max 400px on large screens
   }
 
@@ -158,7 +158,14 @@ export const InteractiveTutorial = () => {
 
 
   return (
-    <div className="min-h-dvh bg-background flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden">
+    <div 
+      className="bg-background flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden"
+      style={{
+        height: '100dvh',
+        paddingTop: 'env(safe-area-inset-top)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+      }}
+    >
 
       {/* Progress indicator */}
       <div className="absolute top-8 sm:top-12 left-1/2 -translate-x-1/2 flex gap-2 z-10">
