@@ -7,16 +7,8 @@ interface WindowSize {
 
 export const useWindowSize = () => {
   const getSize = () => {
-    // For iOS devices, use visualViewport for accurate available space
-    // This accounts for Safari's dynamic UI (address bar, bottom bar, etc.)
-    if (window.visualViewport) {
-      return {
-        width: window.visualViewport.width,
-        height: window.visualViewport.height,
-      };
-    }
-    
-    // Fallback to window dimensions for other browsers
+    // Use window dimensions directly for accurate viewport size
+    // This gives the full screen size before safe area insets are applied
     return {
       width: window.innerWidth,
       height: window.innerHeight,
