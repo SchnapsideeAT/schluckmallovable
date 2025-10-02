@@ -120,11 +120,10 @@ export const GameCard = memo(({
       <img 
         src={cardImageSrc} 
         alt={`${card.category} Card ${card.id}`}
-        className="w-full h-auto object-contain rounded-2xl block pointer-events-auto pulse-glow"
+        className="w-full h-auto object-contain rounded-2xl block pointer-events-auto"
         style={{
           boxShadow: `0 0 20px hsl(${categoryColor} / 0.4), 0 0 40px hsl(${categoryColor} / 0.2)`,
           cursor: horizontalDistance !== 0 ? 'grabbing' : 'grab',
-          color: `hsl(${categoryColor} / 0.06)`,
         }}
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}
