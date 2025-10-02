@@ -265,7 +265,7 @@ export const InteractiveTutorial = () => {
               {step.requiredSwipe === 'right' && (
                 <>
                   <ArrowRight className="w-16 h-16 sm:w-20 sm:h-20 text-green-500 animate-bounce-right" />
-                  <div className="text-center space-y-2 -mt-12">
+                  <div className="text-center space-y-2">
                     <h3 className="text-xl sm:text-2xl font-bold text-foreground">{step.title}</h3>
                     <p className="text-sm sm:text-base text-muted-foreground max-w-md">{step.description}</p>
                   </div>
@@ -274,7 +274,7 @@ export const InteractiveTutorial = () => {
               {step.requiredSwipe === 'left' && (
                 <>
                   <ArrowLeft className="w-16 h-16 sm:w-20 sm:h-20 text-red-500 animate-bounce-left" />
-                  <div className="text-center space-y-2 -mt-12">
+                  <div className="text-center space-y-2">
                     <h3 className="text-xl sm:text-2xl font-bold text-foreground">{step.title}</h3>
                     <p className="text-sm sm:text-base text-muted-foreground max-w-md">{step.description}</p>
                   </div>
