@@ -347,7 +347,12 @@ const Game = () => {
   };
 
   return (
-    <div className="no-scroll min-h-dvh h-dvh flex flex-col page-container pt-2 relative">
+    <div 
+      className="no-scroll min-h-dvh h-dvh flex flex-col page-container pt-2 relative"
+      style={{
+        paddingBottom: 'max(env(safe-area-inset-bottom), 0.5rem)',
+      }}
+    >
       {/* Header */}
       <div className="flex items-center justify-between mb-4 sm:mb-6">
         <Button

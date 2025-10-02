@@ -62,16 +62,16 @@ export const InteractiveTutorial = () => {
   let cardMaxWidth: number;
   
   if (width < 375) {
-    // Compact phones (iPhone SE, small Android)
-    cardMaxHeight = height * 0.58;
+    // Compact phones (iPhone SE, small Android) - reduced for safe area
+    cardMaxHeight = height * 0.52;
     cardMaxWidth = width * 0.75;
   } else if (width < 430) {
-    // Standard phones (iPhone 13/14/15, Galaxy S23/24, Pixel 7/8)
-    cardMaxHeight = height * 0.60;
+    // Standard phones (iPhone 13/14/15, Galaxy S23/24, Pixel 7/8) - reduced for safe area
+    cardMaxHeight = height * 0.54;
     cardMaxWidth = width * 0.78;
   } else if (width < 768) {
-    // Large phones & phablets (iPhone Pro Max, Galaxy Ultra, Pixel Pro)
-    cardMaxHeight = height * 0.62;
+    // Large phones & phablets (iPhone Pro Max, Galaxy Ultra, Pixel Pro) - reduced for safe area
+    cardMaxHeight = height * 0.56;
     cardMaxWidth = width * 0.80;
   } else {
     // Tablets & Desktop
@@ -158,7 +158,12 @@ export const InteractiveTutorial = () => {
 
 
   return (
-    <div className="min-h-dvh bg-background flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden">
+    <div 
+      className="h-dvh bg-background flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden"
+      style={{
+        paddingBottom: 'max(env(safe-area-inset-bottom), 1rem)',
+      }}
+    >
 
       {/* Progress indicator */}
       <div className="absolute top-8 sm:top-12 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -321,7 +326,12 @@ export const InteractiveTutorial = () => {
       </div>
 
       {/* Skip button at bottom center */}
-      <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 z-30">
+      <div 
+        className="absolute left-1/2 -translate-x-1/2 z-30"
+        style={{
+          bottom: 'calc(env(safe-area-inset-bottom) + 1rem)',
+        }}
+      >
         <Button
           onClick={handleSkip}
           variant="ghost"
