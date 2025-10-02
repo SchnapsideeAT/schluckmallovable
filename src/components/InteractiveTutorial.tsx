@@ -225,7 +225,7 @@ export const InteractiveTutorial = () => {
         {step.requiredSwipe && (
           <div className="w-full flex flex-col items-center">
             {/* Card */}
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full flex items-center justify-center mt-12 sm:mt-16">
             <div 
               className="relative inline-block pointer-events-none select-none"
               style={{
