@@ -213,7 +213,7 @@ export const InteractiveTutorial = () => {
       )}
 
       {/* Main content - hidden for swipe up */}
-      <div className={`relative z-10 flex flex-col items-center gap-4 sm:gap-8 w-full px-2 ${step.requiredSwipe === 'up' ? 'invisible' : ''}`}>
+      <div className={`relative z-10 flex flex-col items-center gap-4 sm:gap-8 w-full px-2 mt-16 sm:mt-20 ${step.requiredSwipe === 'up' ? 'invisible' : ''}`}>
         {/* Icon/Visual */}
         {step.icon && !step.requiredSwipe && (
           <div className="flex justify-center animate-scale-in mt-4">
@@ -225,7 +225,7 @@ export const InteractiveTutorial = () => {
         {step.requiredSwipe && (
           <div className="w-full flex flex-col items-center">
             {/* Card */}
-            <div className="w-full flex items-center justify-center mt-12 sm:mt-16">
+            <div className="w-full flex items-center justify-center">
             <div 
               className="relative inline-block pointer-events-none select-none"
               style={{
