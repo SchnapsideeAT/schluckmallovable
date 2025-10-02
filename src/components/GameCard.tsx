@@ -124,6 +124,7 @@ export const GameCard = memo(({
         style={{
           boxShadow: `0 0 10px hsl(${categoryColor} / 0.2), 0 0 20px hsl(${categoryColor} / 0.1)`,
           cursor: horizontalDistance !== 0 ? 'grabbing' : 'grab',
+          animation: 'glowPulse 3s ease-in-out infinite',
         }}
         draggable={false}
         onContextMenu={(e) => e.preventDefault()}

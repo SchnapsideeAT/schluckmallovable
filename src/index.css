@@ -295,6 +295,17 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes glowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 20px currentColor);
+    opacity: 0.2;
+  }
+  50% {
+    filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor);
+    opacity: 0.3;
+  }
+}
+
 @keyframes slideUp {
   from {
     transform: translateY(20px);
