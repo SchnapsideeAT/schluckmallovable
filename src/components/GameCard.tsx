@@ -119,7 +119,7 @@ export const GameCard = memo(({
       <div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{
-          boxShadow: `0 0 10px hsl(${categoryColor} / 0.3), 0 0 20px hsl(${categoryColor} / 0.2)`,
+          boxShadow: `0 0 15px hsl(${categoryColor} / 0.35), 0 0 25px hsl(${categoryColor} / 0.25)`,
           animation: 'glowPulse 3s ease-in-out infinite',
           zIndex: -1,
         }}
@@ -131,7 +131,7 @@ export const GameCard = memo(({
         alt={`${card.category} Card ${card.id}`}
         className="w-full h-auto object-contain rounded-2xl block pointer-events-auto"
         style={{
-          boxShadow: `0 0 10px hsl(${categoryColor} / 0.2), 0 0 20px hsl(${categoryColor} / 0.1)`,
+          boxShadow: `0 0 12px hsl(${categoryColor} / 0.25), 0 0 25px hsl(${categoryColor} / 0.12)`,
           cursor: horizontalDistance !== 0 ? 'grabbing' : 'grab',
         }}
         draggable={false}
