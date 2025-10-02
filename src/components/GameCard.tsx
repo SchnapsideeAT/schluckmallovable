@@ -119,7 +119,7 @@ export const GameCard = memo(({
       <div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{
-          boxShadow: `0 0 ${cardMaxWidth * 0.06}px hsl(${categoryColor} / 0.35), 0 0 ${cardMaxWidth * 0.12}px hsl(${categoryColor} / 0.25)`,
+          boxShadow: `0 0 ${cardMaxWidth * 0.3}px hsl(${categoryColor} / 0.35), 0 0 ${cardMaxWidth * 0.6}px hsl(${categoryColor} / 0.25)`,
           animation: 'glowPulse 3s ease-in-out infinite',
           zIndex: -1,
         }}
