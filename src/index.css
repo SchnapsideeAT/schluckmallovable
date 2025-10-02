@@ -286,10 +286,10 @@ All colors MUST be HSL.
 
 @keyframes pulseGlow {
   0%, 100% {
-    filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 40px currentColor);
+    filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 25px currentColor);
   }
   50% {
-    filter: drop-shadow(0 0 30px currentColor) drop-shadow(0 0 60px currentColor);
+    filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 35px currentColor);
   }
 }
 
