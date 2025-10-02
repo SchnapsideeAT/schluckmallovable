@@ -213,7 +213,7 @@ export const InteractiveTutorial = () => {
       )}
 
       {/* Main content - hidden for swipe up */}
-      <div className={`relative z-10 flex flex-col items-center gap-4 sm:gap-8 w-full px-2 mt-16 sm:mt-20 ${step.requiredSwipe === 'up' ? 'invisible' : ''}`}>
+      <div className={`relative z-10 flex flex-col items-center gap-4 sm:gap-8 w-full px-2 ${step.requiredSwipe === 'up' ? 'invisible' : ''}`}>
         {/* Icon/Visual */}
         {step.icon && !step.requiredSwipe && (
           <div className="flex justify-center animate-scale-in mt-4">
@@ -223,7 +223,7 @@ export const InteractiveTutorial = () => {
 
         {/* Tutorial card for left/right swipe steps - EXACT GameCard structure */}
         {step.requiredSwipe && (
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center gap-4 sm:gap-6">
             {/* Card */}
             <div className="w-full flex items-center justify-center">
             <div 
@@ -261,7 +261,7 @@ export const InteractiveTutorial = () => {
             </div>
 
             {/* Direction icon hint below card with text */}
-            <div className={`flex flex-col items-center gap-4 -mt-12 ${canProceed ? 'opacity-0' : 'opacity-100'} transition-opacity`}>
+            <div className={`flex flex-col items-center gap-4 ${canProceed ? 'opacity-0' : 'opacity-100'} transition-opacity`}>
               {step.requiredSwipe === 'right' && (
                 <>
                   <ArrowRight className="w-16 h-16 sm:w-20 sm:h-20 text-green-500 animate-bounce-right" />
