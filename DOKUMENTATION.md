@@ -134,13 +134,16 @@ Die App enthält **100+ Karten** in 5 Kategorien:
 
 ### ✅ UX Features
 
-- [x] Tutorial-System
+- [x] Interaktives Tutorial-System
+- [x] Spieler-Übergänge mit Animationen
 - [x] Interaktives Onboarding
 - [x] Spielregeln-Seite
 - [x] Statistik-Ansicht
 - [x] Einstellungen-Panel
 - [x] Fehler-Boundaries
 - [x] Loading States
+- [x] ScrollableContainer mit optimierter Performance
+- [x] Swipe-Feedback Overlay
 
 ### ✅ Developer Experience
 
@@ -310,8 +313,16 @@ src/
 │   ├── GameCard.tsx    # Haupt-Spielkarte
 │   ├── CategorySelector.tsx
 │   ├── PlayerSetup.tsx
+│   ├── PlayerTransition.tsx # Spieler-Übergänge
 │   ├── SwipeOverlay.tsx
+│   ├── InteractiveTutorial.tsx # Tutorial-System
 │   ├── Confetti.tsx
+│   ├── CardBack.tsx
+│   ├── CategoryIcon.tsx
+│   ├── ScrollableContainer.tsx
+│   ├── DevOverlay.tsx
+│   ├── ErrorBoundary.tsx
+│   ├── GameSettings.tsx
 │   └── ...
 │
 ├── hooks/              # Custom React Hooks
@@ -319,7 +330,10 @@ src/
 │   ├── useGameStorage.ts # IndexedDB Storage
 │   ├── useFullscreen.ts
 │   ├── useSettings.ts
-│   └── ...
+│   ├── useWindowSize.ts
+│   ├── useScrollDetection.ts
+│   ├── use-mobile.tsx
+│   └── use-toast.ts
 │
 ├── pages/              # Route-Seiten
 │   ├── Index.tsx       # Landing Page
@@ -328,17 +342,21 @@ src/
 │   ├── Game.tsx        # Hauptspiel
 │   ├── Statistics.tsx  # Stats-Ansicht
 │   ├── Settings.tsx
-│   └── Rules.tsx
+│   ├── Rules.tsx
+│   ├── InteractiveTutorial.tsx # Tutorial-Seite
+│   └── NotFound.tsx
 │
 ├── utils/              # Utility-Funktionen
 │   ├── cardUtils.ts    # Karten-Logik
 │   ├── cardImageMapper.ts
 │   ├── cardImageMapper.lazy.ts # Lazy Loading
+│   ├── categoryIconMapper.ts
 │   ├── sounds.ts       # Audio System
 │   ├── haptics.ts      # Vibrations
 │   ├── featureFlags.ts
 │   ├── localStorage.ts
-│   └── capacitorStorage.ts
+│   ├── capacitorStorage.ts
+│   └── capacitor-init.ts
 │
 ├── data/
 │   └── cards.json      # 100+ Spielkarten
@@ -620,7 +638,48 @@ useEffect(() => {
 - IndexedDB für Persistenz (async)
 - Auto-Save mit Debouncing
 
-### 4. Error Handling
+### 4. PlayerTransition Component
+
+```typescript
+// components/PlayerTransition.tsx
+export const PlayerTransition = ({ player, categoryColor, onTap }) => {
+  const { settings } = useSettings();
+  
+  const handleInteraction = () => {
+    triggerHaptic('medium', settings.hapticEnabled);
+    onTap();
+  };
+
+  return (
+    <div 
+      className={`fixed inset-0 ${categoryColor} z-50 flex items-center justify-center cursor-pointer animate-fade-in-smooth`}
+      onClick={handleInteraction}
+      onTouchEnd={handleInteraction}
+    >
+      <div className="text-center space-y-8 px-8 animate-scale-in-smooth">
+        <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-white/20 backdrop-blur-sm border-4 border-white/40 shadow-2xl">
+          <span className="text-7xl drop-shadow-2xl">{player.avatar}</span>
+        </div>
+        <h2 className="text-5xl font-bold text-white drop-shadow-2xl">
+          {player.name}
+        </h2>
+        <p className="text-2xl text-white/90 drop-shadow-lg font-medium">
+          Du bist dran!
+        </p>
+      </div>
+    </div>
+  );
+};
+```
+
+**Features**:
+- Fullscreen-Übergänge zwischen Spielern
+- Smooth Fade-in & Scale-in Animationen
+- Kategorie-basierte Hintergrundfarben
+- Haptisches Feedback bei Tap
+- Avatar & Spielername prominent dargestellt
+
+### 5. Error Handling
 
 ```typescript
 // components/ErrorBoundary.tsx
@@ -820,6 +879,6 @@ dist/
 
 ---
 
-**Letzte Aktualisierung**: 2025-10-01  
-**Status**: 90% Production-Ready  
+**Letzte Aktualisierung**: 2025-10-03  
+**Status**: 95% Production-Ready  
 **Lizenz**: Proprietär
