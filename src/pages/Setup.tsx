@@ -9,8 +9,10 @@ import { playSound } from "@/utils/sounds";
 import { loadLastPlayers, loadLastCategories, hasShownInteractiveTutorial } from "@/utils/localStorage";
 import { useSettings } from "@/hooks/useSettings";
 import { ScrollableContainer } from "@/components/ScrollableContainer";
+import { useKeyboard } from "@/hooks/useKeyboard";
 
 const Setup = () => {
+  useKeyboard();
   const navigate = useNavigate();
   const { settings } = useSettings();
   const [players, setPlayers] = useState<Player[]>([]);
