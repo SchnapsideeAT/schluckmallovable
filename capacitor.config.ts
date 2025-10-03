@@ -8,10 +8,6 @@ const config: CapacitorConfig = {
     contentInset: 'always'
   },
   plugins: {
-    Keyboard: {
-      resize: 'native',
-      style: 'dark'
-    },
     SplashScreen: {
       launchShowDuration: 0
     }
